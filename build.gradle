@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'scala'
+apply plugin: "maven"
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+group = "Signals"
+version = 0.1
+
+ext {
+    scalaVersionMain = '2.11'
+    scalaVersion = '2.11.8'
+    akkaVersion = '2.4.11'
+    log4jVersion = '2.2'
+    swagger_core_version = "1.5.10"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.scala-lang', name: 'scala-library', version: scalaVersion
+
+    compile "io.swagger:swagger-scala-module_${scalaVersionMain}:1.0.2"
+    //compile "io.swagger:swagger-core:$swagger_core_version"
+    compile "com.github.swagger-akka-http:swagger-akka-http_2.11:0.7.2"
+
+    compile group: 'com.typesafe.akka', name: 'akka-actor_2.11', version: akkaVersion
+    compile group: 'com.typesafe.akka', name: 'akka-http-core_2.11', version: akkaVersion
+    compile group: 'com.typesafe.akka', name: 'akka-http-experimental_2.11', version: akkaVersion
+
+    testCompile 'junit:junit:4.11'
+
+    runtime group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
+    runtime group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+    runtime group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: log4jVersion
+}
+
+task runSampleApp(type: JavaExec, description: 'Run the api') {
+    classpath sourceSets.test.runtimeClasspath
+    main = "com.perkinelmer.signals.API"
+}
