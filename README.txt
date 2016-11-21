@@ -1,6 +1,9 @@
 Instructions
 1. Clone the project
-2. gradle run
+2. Execute ./gradlew
+3. gradle run
+
+Note: if Gradle is not installed on your machine
 
 See Swagger interface for available APIs: http://localhost:8080/swagger
 
