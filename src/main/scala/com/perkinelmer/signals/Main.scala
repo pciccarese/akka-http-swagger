@@ -6,9 +6,8 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
 import akka.http.scaladsl.server.Route
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
- 
-import com.perkinelmer.signals.resources.DatasetResource
-import com.perkinelmer.signals.resources.ProjectResource
+import com.perkinelmer.signals.dataset.DatasetApi
+import com.perkinelmer.signals.project.ProjectApi
 import com.perkinelmer.signals.swagger.SwaggerDocService
 
 object API extends Resources with CorsSupport {
@@ -32,4 +31,4 @@ object API extends Resources with CorsSupport {
     }
 }
 
-trait Resources extends DatasetResource with ProjectResource
+trait Resources extends DatasetApi with ProjectApi
