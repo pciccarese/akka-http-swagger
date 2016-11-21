@@ -6,6 +6,8 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import io.swagger.annotations._
 
+import spray.json.DefaultJsonProtocol._
+
 @Path("/dataset")
 @Api(value = "/dataset")
 trait DatasetApi {
@@ -15,6 +17,8 @@ trait DatasetApi {
 	def datasetsRoutes: Route = pathPrefix("dataset") {
 		getDataset ~ postDataset ~ deleteDataset
 	}
+
+	//implicit val datasetFormat = jsonFormat3(Dataset)
 
 	@ApiOperation(value = "Get dataset", nickname = "getDataset", httpMethod = "GET", response = classOf[String], produces = "application/json, text/plain")
 	@ApiImplicitParams(Array(

@@ -39,6 +39,7 @@ dependencies {
 
     testCompile 'junit:junit:4.11'
 
+
     runtime group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
     runtime group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
     runtime group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: log4jVersion
