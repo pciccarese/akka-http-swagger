@@ -10,6 +10,6 @@ public class DatasetServiceTests {
         DatasetService tester = new DatasetService();
 
         // assert statements
-        Assert.assertEquals("10 x 0 must be 0", "Hello dataset", tester.getDataset("", ""));
+        Assert.assertEquals("10 x 0 must be 0", "Hello dataset", tester.getDataset(""));
     }
 }
