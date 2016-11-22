@@ -10,6 +10,7 @@ class Project(idc: String, projectIdc: String, namec: String) {
   var name: String = namec;
 
   var createdOn : Date = Calendar.getInstance().getTime()
+  var updatedOn : Date = Calendar.getInstance().getTime()
 }
 
 object ProjectJsonProtocol extends DefaultJsonProtocol {
@@ -19,14 +20,15 @@ object ProjectJsonProtocol extends DefaultJsonProtocol {
       json.asJsObject.getFields("id", "projectId", "name") match {
         case Seq(JsString(id), JsString(projectId), JsString(name)) =>
           new Project(id, projectId, name)
-        case _ => throw new DeserializationException("User")
+        case _ => throw new DeserializationException("Project")
       }
 
     override def write(project: Project): JsValue = JsObject(
       "id" -> JsString(project.id),
       "name" -> JsString(project.projectId),
       "email" -> JsString(project.name),
-      "createdOn" -> JsString(project.createdOn.toString)
+      "createdOn" -> JsString(project.createdOn.toString),
+      "updatedOn" -> JsString(project.createdOn.toString)
     )
   }
 }
