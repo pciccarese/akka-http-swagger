@@ -19,13 +19,10 @@ trait DatasetApi extends SprayJsonSupport {
 		getDataset ~ postDataset ~ deleteDataset
 	}
 
-//	object DatasetProtocol extends DefaultJsonProtocol {
-//	  implicit val datasetFormat = jsonFormat3(Dataset)
-//	}
 
-	implicit val datasetFormat = jsonFormat3(Dataset)
+  import com.perkinelmer.signals.dataset.DatasetJsonProtocol._
 
-	@ApiOperation(value = "Get dataset", nickname = "getDataset", httpMethod = "GET", response = classOf[Dataset], produces = "application/json, text/plain")
+	@ApiOperation(value = "Get dataset", nickname = "getDataset", httpMethod = "GET", response = classOf[Dataset], produces = "application/json")
 	@ApiImplicitParams(Array(
 		new ApiImplicitParam(name = "id", required = false, dataType = "string", paramType = "path", value = "Identifier of dataset that needs to be fetched"),
 		new ApiImplicitParam(name = "format", required = false, dataType = "string", paramType = "query", value = "Format of response")
@@ -53,7 +50,7 @@ trait DatasetApi extends SprayJsonSupport {
 		}
 	}
 
-	@ApiOperation(value = "Post dataset", nickname = "postDataset", httpMethod = "POST", response = classOf[Dataset], produces = "application/json, text/plain")
+	@ApiOperation(value = "Post dataset", nickname = "postDataset", httpMethod = "POST", response = classOf[Dataset], produces = "application/json")
 	@ApiImplicitParams(Array(
 		new ApiImplicitParam(name = "id", required = false, dataType = "string", paramType = "path", value = "Identifier of dataset that needs to be fetched"),
 		new ApiImplicitParam(name = "format", required = false, dataType = "string", paramType = "query", value = "Format of response")
@@ -81,7 +78,7 @@ trait DatasetApi extends SprayJsonSupport {
 			}
 	}
 
-	@ApiOperation(value = "Delete dataset", nickname = "deleteDataset", httpMethod = "DELETE", response = classOf[Dataset], produces = "application/json, text/plain")
+	@ApiOperation(value = "Delete dataset", nickname = "deleteDataset", httpMethod = "DELETE", response = classOf[Dataset], produces = "application/json")
 	@ApiImplicitParams(Array(
 		new ApiImplicitParam(name = "id", required = true, dataType = "string", paramType = "path", value = "Identifier of dataset that needs to be fetched"),
 		new ApiImplicitParam(name = "format", required = false, dataType = "string", paramType = "query", value = "Format of response")

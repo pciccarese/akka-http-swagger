@@ -9,3 +9,4 @@ final case class Dataset(
      @(ApiModelProperty @field) (position=2, value="datasetId") datasetId: String,
      @(ApiModelProperty @field) (position=3, value="name") name: String) {
 }
+
