@@ -19,4 +19,11 @@ object DatasetBsonProtocol {
     val mongoObj = buildMongoDbObject(dataset)
     MongoFactory.collection.save(mongoObj)
   }
+
+  def getDataset(id: String): Any = {
+    val mongoColl = MongoFactory.collection
+    val q = MongoDBObject("id" -> id)
+    val dataset = mongoColl.findOne(q)
+    return dataset
+  }
 }

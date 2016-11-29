@@ -12,7 +12,7 @@ import com.perkinelmer.signals.swagger.SwaggerDocService
 
 object API extends Resources with CorsSupport {
     def main(args: Array[String]) {
-    	  implicit val actorSystem = ActorSystem()
+    	  implicit val actorSystem = ActorSystem("signals-model")
         implicit val actorMaterializer = ActorMaterializer();
 
         val routes: Route = datasetsRoutes ~ projectsRoutes ~ 

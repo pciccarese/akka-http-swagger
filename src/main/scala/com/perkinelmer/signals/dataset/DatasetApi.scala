@@ -65,14 +65,14 @@ trait DatasetApi extends SprayJsonSupport {
 		pathEnd {
 			parameters("id".as[String].?, "format".as[String].?) { (id, format) =>
 				complete {
-					datasetService.getDataset(id.getOrElse(""));
+					datasetService.saveDataset(id.getOrElse(""));
 				}
 			}
 		} ~
 			path( Segment ) { descriptorId =>
 				parameters("id".as[String].?, "format".as[String].?) { (id, format) =>
 					complete {
-						datasetService.getDataset(descriptorId);
+						datasetService.saveDataset(descriptorId);
 					}
 				}
 			}
@@ -93,7 +93,7 @@ trait DatasetApi extends SprayJsonSupport {
 			path( Segment ) { descriptorId =>
 				parameters("id".as[String].?, "format".as[String].?) { (id, format) =>
 					complete {
-						datasetService.getDataset(descriptorId);
+						datasetService.saveDataset(descriptorId);
 					}
 				}
 			}
