@@ -1,7 +1,7 @@
 package com.perkinelmer.signals.dataset.actors
 
 import akka.actor.Actor
-import com.perkinelmer.signals.dataset.{Dataset, DatasetBsonProtocol}
+import com.perkinelmer.signals.dataset.DatasetBsonProtocol
 
 /**
   * Created by paolociccarese on 11/29/16.

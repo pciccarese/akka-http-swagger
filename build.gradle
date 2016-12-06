@@ -18,6 +18,7 @@ ext {
     scalaVersionMain = '2.11'
     scalaVersion = '2.11.8'
     akkaVersion = '2.4.11'
+    playVersion = '2.5.10'
     log4jVersion = '2.2'
     swagger_core_version = "1.5.10"
 }
@@ -36,6 +37,8 @@ dependencies {
     compile group: 'com.typesafe.akka', name: 'akka-actor_2.11', version: akkaVersion
     compile group: 'com.typesafe.akka', name: 'akka-http-core_2.11', version: akkaVersion
     compile group: 'com.typesafe.akka', name: 'akka-http-experimental_2.11', version: akkaVersion
+
+    compile group: 'com.typesafe.play', name: 'play-json_2.11', version: playVersion
 
     compile 'org.mongodb:casbah-core_2.11:3.1.1'
 

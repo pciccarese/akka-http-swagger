@@ -1,4 +1,4 @@
-package com.perkinelmer.signals.dataset
+package com.perkinelmer.signals.dataset.model
 
 import io.swagger.annotations._
 

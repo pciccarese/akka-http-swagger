@@ -1,7 +1,8 @@
 package com.perkinelmer.signals.dataset.actors
 
 import akka.actor.Actor
-import com.perkinelmer.signals.dataset.{Dataset, DatasetBsonProtocol}
+import com.perkinelmer.signals.dataset.DatasetBsonProtocol
+import com.perkinelmer.signals.dataset.model.Dataset
 
 class SaveDatasetActor extends Actor {
 

@@ -1,6 +1,7 @@
 package com.perkinelmer.signals.dataset
 
 import com.mongodb.casbah.Imports._
+import com.perkinelmer.signals.dataset.model.Dataset
 import com.perkinelmer.signals.mongodb.MongoFactory
 
 object DatasetBsonProtocol {

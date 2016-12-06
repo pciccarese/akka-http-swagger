@@ -1,5 +1,6 @@
 package com.perkinelmer.signals.dataset
 
+import com.perkinelmer.signals.dataset.model.Dataset
 import spray.json.DefaultJsonProtocol
 
 object DatasetJsonProtocol extends DefaultJsonProtocol {

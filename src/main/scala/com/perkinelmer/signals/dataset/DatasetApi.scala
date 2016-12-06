@@ -6,6 +6,7 @@ import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import akka.http.scaladsl.marshalling.ToResponseMarshallable
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
+import com.perkinelmer.signals.dataset.model.Dataset
 import io.swagger.annotations._
 import spray.json.DefaultJsonProtocol._
 

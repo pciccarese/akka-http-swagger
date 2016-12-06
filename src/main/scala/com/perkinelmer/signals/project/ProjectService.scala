@@ -1,6 +1,6 @@
 package com.perkinelmer.signals.project
 
-import com.perkinelmer.signals.dataset.Dataset
+import com.perkinelmer.signals.dataset.model.Dataset
 
 class ProjectService() {
 
